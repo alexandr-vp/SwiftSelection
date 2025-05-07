@@ -149,7 +149,7 @@ class SwiftSelection {
     
     static func selectAll() {
         let script = """
-        delay 0.25
+        delay 0.5
         tell application "System Events" to keystroke "a" using {command down}
         delay 0.5
         """
