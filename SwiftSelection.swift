@@ -140,7 +140,7 @@ class SwiftSelection {
         var error: NSDictionary?
         if let appleScript = NSAppleScript(source: script), let output = appleScript.executeAndReturnError(&error).stringValue {
             print("getSelectedTextInGeneral:", output)
-            return output
+            return output.replacingOccurrences(of: "\r", with: "\n")
         } else {
             print("AppleScriptError: \(String(describing: error))")
             return nil
